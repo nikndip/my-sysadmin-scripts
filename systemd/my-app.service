@@ -1,0 +1,14 @@
+[Unit]
+Description=Resource monitoring HTTP service
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/docker start -a my-app
+ExecStop=/usr/bin/docker stop my-app
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
