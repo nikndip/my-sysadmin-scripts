@@ -1,0 +1,5 @@
+services:
+  app:
+    build: .
+    image: my-script:latest
+    container_name: my-app
